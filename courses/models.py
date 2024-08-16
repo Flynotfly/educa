@@ -65,7 +65,7 @@ class Content(models.Model):
     item = GenericForeignKey('content_type', 'object_id')
 
 
-class ItemBase(models.Model):
+class Item(models.Model):
     owner = models.ForeignKey(
         User,
         related_name='%(class)s_related',
