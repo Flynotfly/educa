@@ -92,3 +92,7 @@ class File(Item):
 
 class Image(Item):
     file = models.FileField(upload_to='images')
+
+
+class Video(Image):
+    url = models.URLField()
