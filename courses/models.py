@@ -84,3 +84,7 @@ class Item(models.Model):
 
 class Text(Item):
     content = models.TextField()
+
+
+class File(Item):
+    file = models.FileField(upload_to='files')
