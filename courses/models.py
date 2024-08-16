@@ -80,3 +80,7 @@ class Item(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Text(Item):
+    content = models.TextField()
