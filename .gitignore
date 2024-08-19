@@ -7,3 +7,4 @@
 /.idea/vcs.xml
 /db.sqlite3
 /courses/fixtures/subjects.json
+/media/
