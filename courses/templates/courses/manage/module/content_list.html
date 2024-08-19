@@ -60,24 +60,24 @@
 {% endblock %}
 
 {% block domready %}
-        var options = {
-            method: 'POST',
-            mode: 'same-origin'
-        }
-        const moduleOrderUrl = '{% url 'module_order' %}';
+    var options = {
+        method: 'POST',
+        mode: 'same-origin'
+    }
+    const moduleOrderUrl = '{% url 'module_order' %}';
 
-        sortable('#modules', {
-            forcePlaceholderSize: true,
-            placeholderClass: 'placeholder'
-        })[0].addEventListener('sortupdate', function (e) {
-            modulesOrder = {};
-            var modules = document.querySelectorAll('#modules li');
-            modules.forEach(function (module, index) {
-                modulesOrder[module.dataset.id] = index;
-            });
-            options['body'] = JSON.stringify(modulesOrder);
-            fetch(moduleOrderUrl, options)
+    sortable('#modules', {
+        forcePlaceholderSize: true,
+        placeholderClass: 'placeholder'
+    })[0].addEventListener('sortupdate', function (e) {
+        modulesOrder = {};
+        var modules = document.querySelectorAll('#modules li');
+        modules.forEach(function (module, index) {
+            modulesOrder[module.dataset.id] = index;
         });
+        options['body'] = JSON.stringify(modulesOrder);
+        fetch(moduleOrderUrl, options)
+    });
 
     const contentOrderUrl = '{% url 'content_order' %}';
 
