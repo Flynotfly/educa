@@ -89,7 +89,6 @@
         var contents = document.querySelectorAll('#module-contents div');
         contents.forEach(function (content, index) {
             contentOrder[content.dataset.id] = index;
-            module.querySelector('.order').innerHTML = index;
         });
         options['body'] = JSON.stringify(contentOrder);
         fetch(contentOrderUrl, options)
