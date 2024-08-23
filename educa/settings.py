@@ -162,3 +162,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# asgi settings
+ASGI_APPLICATION = 'educa.asgi.application'
