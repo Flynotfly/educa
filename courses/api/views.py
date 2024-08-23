@@ -23,3 +23,9 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Course.objects.prefetch_related('modules')
     serializer_class = CourseSerializer
     pagination_class = StandardPagination
+
+
+class SubjectViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Subject.objects.annotate(total_courses=Count('courses'))
+    serializer_class = SubjectSerializer
+    pagination_class = StandardPagination
