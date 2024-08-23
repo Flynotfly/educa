@@ -147,3 +147,8 @@ CACHES = {
 
 # debug_toolbar settings
 INTERNAL_IPS = ['127.0.0.1']
+
+# cache middleware settings
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 60 * 15
+CACHE_MIDDLEWARE_KEY_PREFIX = 'educa'
