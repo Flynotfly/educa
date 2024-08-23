@@ -27,7 +27,7 @@ class ModuleSerializer(serializers.ModelSerializer):
 
 
 class CourseSerializer(serializers.ModelSerializer):
-    modules = serializers.StringRelatedField(many=True, read_only=True)
+    modules = ModuleSerializer(many=True, read_only=True)
 
     class Meta:
         model = Course
