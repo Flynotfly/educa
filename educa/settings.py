@@ -142,3 +142,6 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211',
     }
 }
+
+# debug_toolbar settings
+INTERNAL_IPS = ['127.0.0.1']
