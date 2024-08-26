@@ -23,3 +23,6 @@ DATABASES = {
 
 REDIS_URL = 'redis://ram_db:6379'
 CHANNEL_LAYERS['default']['CONFIG']['hosts'] = [REDIS_URL]
+
+MEMCACHED_URL = 'memcached://cache:11211'
+CACHES['default']['LOCATION'] = MEMCACHED_URL
