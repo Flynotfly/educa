@@ -20,3 +20,6 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+
+REDIS_URL = 'redis://ram_db:6379'
+CHANNEL_LAYERS['default']['CONFIG']['hosts'] = REDIS_URL
