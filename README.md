@@ -3,10 +3,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Flynotfly/GymStat">
-    <img src="images/logo.png" alt="Logo" width="340" height="80">
-  </a>
-
   <h3 align="center">Educa</h3>
 
   <p align="center">
@@ -16,58 +12,20 @@
 </div>
 
 
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Содержание</summary>
-  <ol>
-    <li>
-      <a href="#описание-проекта">Описание проекта</a>
-      <ul>
-        <li><a href="#использованные-технологии">Использованные технологии</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#использование">Использование</a>
-      <ul>
-        <li><a href="#сборка-и-запуск-проекта">Сборка и запуск проекта</a></li>
-        <li><a href="#локальный-запуск-и-разработка">Локальный запуск и разработка</a></li>
-      </ul>
-    </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#контакты">Контакты</a></li>
-  </ol>
-</details>
-
-
-
 ## Описание проекта
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Проект представляет собой веб-приложение, для создания и прохождения онлайн курсов.
 
-Проект представляет собой веб-приложение, которое позволяет записывать результаты тренировок, вести аналитику и ставить личные цели.
-
-Особенности приложения:
-* Возможность добавления собственных упражнений
-* Автоматизированное заполнение результатов тренировок с помощью шаблонов
-* Возможность анализировать результаты отдельно взятых приложений
+* Пользователи могут загружать собственные курсы и проходить уже загруженные от других пользователей.
+* Доступна загрузка медиа, в том числе видео.
+* Доступны онлайн чаты.
 
 <p align="right">(<a href="#readme-top">Вверх</a>)</p>
 
 
 
 ### Использованные технологии
-* [![Python][Python-shield]][Python-url]
-* [![Django][Django-shield]][Django-url]
-* [![Django REST Framework][DRF-shield]][DRF-url]
-* [![TypeScript][TypeScript-shield]][TypeScript-url]
-* [![React][React-shield]][React-url]
-* [![MUI][MUI-shield]][MUI-url]
-* [![PostgreSQL][PostgreSQL-shield]][PostgreSQL-url]
-* [![Redis][Redis-shield]][Redis-url]
-* [![Nginx][Nginx-shield]][Nginx-url]
-* [![Docker][Docker-shield]][Docker-url]
-* [![GitHub Actions][GitHub-Actions-shield]][GitHub-Actions-url]
+Django, PostgreSQL, Redis, Docker, Nginx.
 
 <p align="right">(<a href="#readme-top">Вверх</a>)</p>
 
@@ -78,103 +36,24 @@
 
 ### Сборка и запуск проекта
 
-Для сборки проекта и его последующего автоматического запуска на сервере необходимо активировать workflow "Deploy to production" в GitHub Actions. Предварительно необходимо добавить следующие GitHub Actions secrets, если они отсутвуют:
-* SERVER_HOST
-* SERVER_USER
-* SSH_PRIVATE_KEY
-* DOCKERHUB_USERNAME
-* DOCKERHUB_TOKEN
-* DJANGO_SECRET_KEY
-* EMAIL_HOST_USER
-* EMAIL_HOST_PASSWORD
-* DEFAULT_FROM_EMAIL
+Алгоритм запуска представлен для машины с ОС Windows 11.
 
-На сервере должен быть установлен Docker и получен HTTPS сертификат.
+1. Установить git и docker.
 
-### Локальный запуск и разработка
-
-Алгоритм запуска представлен для машины с ОС Windows 11
-
-1. Установить git, docker, npm 11 и python 3.12.
- 
-2. Создать и активировать виртуальное окружение python.
+2. Склонировать репозиторий.
 ```
-py -m venv GymStats
-cd GymStats
-Scripts\activate
+git clone https://github.com/Flynotfly/educa.git
 ```
 
-3. Склонировать репозиторий.
+3. Перейти в директорию проекта.
 ```
-git clone https://github.com/Flynotfly/GymStats.git
-```
-
-4. Перейти в директорию проекта.
-```
-cd gymstats
+cd educa
 ```
 
-5. Перейти в директорию Django проекта.
+4. Запустить проект с помощью docker.
 ```
-cd gymstat
+docker compose up -d
 ```
-
-6. Установить зависимости.
-```
-pip install -r requirements_dev.txt
-```
-
-7. Создать файл .env со следующими переменными окружения:
-* POSTGRES_DB
-* POSTGRES_USER
-* POSTGRES_PASSWORD
-* EMAIL_HOST_USER
-* EMAIL_HOST_PASSWORD
-* DEFAULT_FROM_EMAIL
-* DJANGO_SECRET_KEY
-
-8. Запустить базу данных.
-```
-docker-compose -f local_postgres/docker-compose.yml --env-file .env up -d
-```
-
-9. Запустить проект.
-```
-py manage.py runserver_plus localhost:8000 --cert ssl/gymstat.crt --settings gymstat.settings.local 
-```
-
-10. Для запуска фронтенда необходимо перейти в директорию "frontend", установить npm и запустить проект в режиме разработчика.
-```
-cd ..
-cd frontend
-npm install
-npm run dev
-```
-
-<p align="right">(<a href="#readme-top">Вверх</a>)</p>
-
-## Roadmap
-
-- [x] Добавить шаблоны тренировок
-- [x] Добавить шаблоны упражнений
-- [ ] Добавить автоматическое заполнение тренировок
-- [ ] Добавить определение результатов тренировок с фото
-- [ ] Добавить кэширование запросов
-- [ ] Добавить возможность переключения языка
-
-<p align="right">(<a href="#readme-top">Вверх</a>)</p>
-
-
-## Контакты
-
-alteria001@gmail.com
-
-tg: @flynotfly
-
-Ссылка на проект: https://github.com/Flynotfly/GymStats
-
-<p align="right">(<a href="#readme-top">Вверх</a>)</p>
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [product-screenshot]: images/screenshot.jpg
