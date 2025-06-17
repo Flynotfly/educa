@@ -5,6 +5,7 @@
 /.idea/misc.xml
 /.idea/modules.xml
 /.idea/vcs.xml
-/db.sqlite3
-/courses/fixtures/subjects.json
-/media/
+/educa/db.sqlite3
+/educa/courses/fixtures/subjects.json
+/educa/media/
+/data/
